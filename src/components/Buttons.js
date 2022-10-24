@@ -5,10 +5,9 @@ import Button from './Button';
 import colors from '../utils/colors';
 
 class Buttons extends Component {
-  
   operatorSelected = operation => {
     this.props.operation(operation);
-  }
+  };
 
   render() {
     const numbers = [
@@ -22,17 +21,21 @@ class Buttons extends Component {
       <View style={styles.container}>
         <SafeAreaView style={styles.numbers}>
           {numbers.map((row, i) => (
-          <View key={i} style={styles.row}>
-            {row.map(char => 
-              <Button key={char} char={char} operation={this.operatorSelected} />
-            )}
-          </View>
-        )}
+            <View key={i} style={styles.row}>
+              {row.map(char => (
+                <Button
+                  key={char}
+                  char={char}
+                  operation={this.operatorSelected}
+                />
+              ))}
+            </View>
+          ))}
         </SafeAreaView>
         <SafeAreaView style={styles.operations}>
-          {operations.map(char => 
+          {operations.map(char => (
             <Button key={char} char={char} operation={this.operatorSelected} />
-          )}
+          ))}
         </SafeAreaView>
       </View>
     );
@@ -53,8 +56,8 @@ const styles = StyleSheet.create({
   },
   operations: {
     flex: 1,
-    backgroundColor: colors["blue-dark"]
-  }
+    backgroundColor: colors['blue-dark'],
+  },
 });
 
 export default Buttons;
