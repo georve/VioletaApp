@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ext, View} from 'react-native';
+import {Text, View} from 'react-native';
 export default class SOSButton extends Component {
   constructor(props) {
     super(props);
