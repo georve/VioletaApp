@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
-import {StatusBar, StyleSheet, SafeAreaView, View,Modal} from 'react-native';
+import {StatusBar, StyleSheet, SafeAreaView, View} from 'react-native';
 
 import Display from './../../components/Display';
 import Buttons from './../../components/Buttons';
 import colors from './../../utils/colors';
 
 export default class Calculator extends Component {
-  constructor(props) {
-    super(props);
-  }
   state = {
     display: '',
     result: '',
@@ -20,7 +17,7 @@ export default class Calculator extends Component {
         display: '',
         result: '',
       });
-      this.props.navigation.navigate('SOS');
+      this.props.navigation.navigate('SOSButton');
     } else if (operation === '=') {
       this.setState({
         display: this.state.result,
