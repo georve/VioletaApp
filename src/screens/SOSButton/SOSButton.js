@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Alert,AppRegistry,Button,StyleSheep,Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 export default class SOSButton extends Component {
   constructor(props) {
     super(props);
@@ -7,7 +7,6 @@ export default class SOSButton extends Component {
       buttonText: 'SOS',
     };
   }
-
 
   render() {
     return (

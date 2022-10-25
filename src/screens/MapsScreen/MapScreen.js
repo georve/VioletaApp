@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 
 export default class MapScreen extends Component {
   render() {
@@ -10,6 +10,7 @@ export default class MapScreen extends Component {
     );
   }
 }
+
 const styles = StyleSheet.create({
   container: {
     fontSize: 20,
