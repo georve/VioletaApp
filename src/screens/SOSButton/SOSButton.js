@@ -93,8 +93,9 @@ const styles = StyleSheet.create({
 
 const shareOptions = {
   title: 'Peligro de Violencia de Genero',
-  message: 'La senore Elsa esta siendo victima de violencia de genero',
+  message: 'La senora Violeta esta siendo victima de violencia de genero',
   url: 'some share url',
   social: Share.Social.WHATSAPP,
   whatsAppNumber: '584140681688',
+  forceDialog: false,
 };
