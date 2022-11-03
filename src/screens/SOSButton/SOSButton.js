@@ -19,8 +19,7 @@ export default class SOSButton extends Component {
   sendMessageWhatsApp = async (phoneNumber, phoneMessage) => {
     // Using 91 for India
     // You can change 91 with your country code
-    /*let url =
-      'whatsapp://send?text=' + phoneMessage + '&phone=+58' + phoneNumber;
+    let url = 'whatsapp://send?text=' + phoneMessage + '&phone=' + phoneNumber;
 
     const supported = await Linking.canOpenURL(url);
     if (supported) {
@@ -35,18 +34,19 @@ export default class SOSButton extends Component {
       })
       .catch(() => {
         alert('Make sure Whatsapp installed on your device');
-      });*/
+      });
+    shareOptions.whatsAppNumber = phoneNumber;
     try {
       const shareResponse = await Share.shareSingle(shareOptions);
     } catch (error) {
       Alert.alert('Error enviando el mensaje');
-    }
+    }*/
   };
 
   ButtonClickCheckFunction = () => {
-    Alert.alert('Button Clicked');
-    let phoneMessage = 'Tu contacto esta en peligro de violencia de Genero';
-    let phones = ['4127375627', '4140681688', '4141641248'];
+    let phoneMessage =
+      '[App Violeta] La señora Elsa Miquelena está siendo víctima de violencia de género.';
+    let phones = ['+584166107176', '+584140681688', '+584141641248'];
     this.sendMessageWhatsApp(phones[0], phoneMessage);
     this.sendMessageWhatsApp(phones[1], phoneMessage);
     this.sendMessageWhatsApp(phones[2], phoneMessage);
@@ -93,7 +93,8 @@ const styles = StyleSheet.create({
 
 const shareOptions = {
   title: 'Peligro de Violencia de Genero',
-  message: 'La senora Violeta esta siendo victima de violencia de genero',
+  message:
+    '[App Violeta] La señora Elsa Miquelena está siendo víctima de violencia de género.',
   url: 'some share url',
   social: Share.Social.WHATSAPP,
   whatsAppNumber: '584140681688',
